@@ -9,24 +9,24 @@ PKG_NAME = "archivebox"
 DESCRIPTION = "Self-hosted internet archiving solution."
 LICENSE = "MIT"
 AUTHOR = "Nick Sweeting"
-AUTHOR_EMAIL="git@nicksweeting.com"
+AUTHOR_EMAIL = "git@nicksweeting.com"
 REPO_URL = "https://github.com/ArchiveBox/ArchiveBox"
 PROJECT_URLS = {
-    "Source":           f"{REPO_URL}",
-    "Documentation":    f"{REPO_URL}/wiki",
-    "Bug Tracker":      f"{REPO_URL}/issues",
-    "Changelog":        f"{REPO_URL}/releases",
-    "Roadmap":          f"{REPO_URL}/wiki/Roadmap",
-    "Community":        f"{REPO_URL}/wiki/Web-Archiving-Community",
-    "Demo":             f"https://demo.archivebox.io",
-    "Donate":           f"{REPO_URL}/wiki/Donations",
+    "Source": f"{REPO_URL}",
+    "Documentation": f"{REPO_URL}/wiki",
+    "Bug Tracker": f"{REPO_URL}/issues",
+    "Changelog": f"{REPO_URL}/releases",
+    "Roadmap": f"{REPO_URL}/wiki/Roadmap",
+    "Community": f"{REPO_URL}/wiki/Web-Archiving-Community",
+    "Demo": f"https://demo.archivebox.io",
+    "Donate": f"{REPO_URL}/wiki/Donations",
 }
 
 ROOT_DIR = Path(__file__).parent.resolve()
 PACKAGE_DIR = ROOT_DIR / PKG_NAME
 
-README = (PACKAGE_DIR / "README.md").read_text(encoding='utf-8', errors='ignore')
-VERSION = json.loads((PACKAGE_DIR / "package.json").read_text().strip())['version']
+README = (PACKAGE_DIR / "README.md").read_text(encoding="utf-8", errors="ignore")
+VERSION = json.loads((PACKAGE_DIR / "package.json").read_text().strip())["version"]
 
 PYTHON_REQUIRES = ">=3.7"
 SETUP_REQUIRES = ["wheel"]
@@ -49,10 +49,10 @@ INSTALL_REQUIRES = [
     "ipython>5.0.0",
 ]
 EXTRAS_REQUIRE = {
-    'sonic': [
+    "sonic": [
         "sonic-client>=0.0.5",
     ],
-    'dev': [
+    "dev": [
         "setuptools",
         "twine",
         "wheel",
@@ -81,8 +81,8 @@ class DisabledTestCommand(test):
     def run(self):
         # setup.py test is deprecated, disable it here by force so stdeb doesnt run it
         print()
-        print('[X] Running tests via setup.py test is deprecated.')
-        print('    Hint: Use the ./bin/test.sh script or pytest instead')
+        print("[X] Running tests via setup.py test is deprecated.")
+        print("    Hint: Use the ./bin/test.sh script or pytest instead")
 
 
 setuptools.setup(
@@ -101,7 +101,7 @@ setuptools.setup(
     install_requires=INSTALL_REQUIRES,
     extras_require=EXTRAS_REQUIRE,
     packages=[PKG_NAME],
-    include_package_data=True,   # see MANIFEST.in
+    include_package_data=True,  # see MANIFEST.in
     entry_points={
         "console_scripts": [
             f"{PKG_NAME} = {PKG_NAME}.cli:main",
@@ -112,7 +112,6 @@ setuptools.setup(
         "Natural Language :: English",
         "Operating System :: OS Independent",
         "Development Status :: 4 - Beta",
-
         "Topic :: Utilities",
         "Topic :: System :: Archiving",
         "Topic :: System :: Archiving :: Backup",
@@ -122,14 +121,12 @@ setuptools.setup(
         "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
         "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
         "Topic :: Software Development :: Libraries :: Python Modules",
-
         "Intended Audience :: Developers",
         "Intended Audience :: Education",
         "Intended Audience :: End Users/Desktop",
         "Intended Audience :: Information Technology",
         "Intended Audience :: Legal Industry",
         "Intended Audience :: System Administrators",
-        
         "Environment :: Console",
         "Environment :: Web Environment",
         "Programming Language :: Python :: 3",
